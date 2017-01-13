@@ -1,0 +1,24 @@
+{
+  "name": "fis3-parser-gfe-widget-inline",
+  "version": "1.0.0",
+  "description": "内嵌widget内容",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomeFED/fis3-parser-gfe-widget-inline.git"
+  },
+  "keywords": [
+    "gfe",
+    "fis3",
+    "widget"
+  ],
+  "author": "gomeFED",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gomeFED/fis3-parser-gfe-widget-inline/issues"
+  },
+  "homepage": "https://github.com/gomeFED/fis3-parser-gfe-widget-inline#readme",
+  "dependencies": {
+    "sync-request": "^3.0.1"
+  }
+}
