@@ -1,4 +1,4 @@
-/**
+ /**
  * 把widget嵌入到内容中
  * @param  {string} content     文件内容
  * @param  {File}   file        fis 的 File 对象 [fis3/lib/file.js]
@@ -10,10 +10,13 @@ module.exports = function(content, file, settings) {
     var notCommentWidget = /^(<!--){0}[.\n\t\r\s]*{%widget\s.*?name="(.*?)".*?%}[.\n\r\t\s]*(-->){0}$/img;
     var result = content.match(notCommentWidget);
     var widgetReg = /{%widget\\s.*?name="(.*?)".*?%}/;
-    var widgets = settings.widget;
-
+    var widgets = settings.widgets;
     content = content.replace(notCommentWidget,function(item,g1,g2){
-    	var conUrl = process.cwd()+'/widget/'+g2+'@'+widgets[g2]+'/'+g2;
+    	var isObjectWidget = false; //判断是否是项目里的widget
+    	if((Object.keys(widgets)).indexOf(g2)==-1){
+    		isObjectWidget = true;
+    	}
+    	var conUrl = isObjectWidget==false ? process.cwd()+'/widget/'+g2+'@'+widgets[g2]+'/'+g2 : process.cwd()+'/widget/'+g2+'/'+g2;
     	conUrl = conUrl.replace(/\\/g,'/');
     	if(fs.existsSync(conUrl+'.html')){
 			conUrl = conUrl+'.html';
