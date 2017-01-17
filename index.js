@@ -10,7 +10,7 @@ module.exports = function(content, file, settings) {
     var notCommentWidget = /^(<!--){0}[.\n\t\r\s]*{%widget\s.*?name="(.*?)".*?%}[.\n\r\t\s]*(-->){0}$/img;
     var result = content.match(notCommentWidget);
     var widgetReg = /{%widget\\s.*?name="(.*?)".*?%}/;
-    var widgets = settings.widget;
+    var widgets = settings.widgets;
 
     content = content.replace(notCommentWidget,function(item,g1,g2){
     	var conUrl = process.cwd()+'/widget/'+g2+'@'+widgets[g2]+'/'+g2;
