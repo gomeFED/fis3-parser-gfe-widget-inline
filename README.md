@@ -12,6 +12,8 @@ npm install [-g] fis3-parser-gfe-widget-inline
 
 ```js
 fis.match('/html/**.{html,ftl}', {
-    parser: fis.plugin('gfe-widget-inline')
+    parser: fis.plugin('gfe-widget-inline',{
+		widget:{}//widget对象
+	})
 });
 ```
